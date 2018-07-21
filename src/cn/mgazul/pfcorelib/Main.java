@@ -13,8 +13,6 @@ public class Main extends JavaPlugin {
 	  
 	plugin = this; 
 	long currentTim = System.currentTimeMillis();
-    registerCommand();
-    RegisterEvents();
     getConfig().options().copyDefaults(true);
     saveConfig();
     saveDefaultConfig();
@@ -34,11 +32,4 @@ public class Main extends JavaPlugin {
   public void onDisable() {
 	  PFPapiHook.unhook();
   }
-
-  public void RegisterEvents() {
-  }
-  
-  public void registerCommand() {
-  }
-
 }

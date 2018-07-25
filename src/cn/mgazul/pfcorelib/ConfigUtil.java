@@ -100,6 +100,8 @@ public class ConfigUtil {
 			    	Config.set("player.playerdata.exp", 0);
 			    	Config.set("player.playerdata.level", 0);
 			    	Config.set("player.playerdata.OnlineTime", 0);
+			    	Config.set("player.playerdata.HomeSize", 0);
+			    	Config.set("player.playerdata.HomeMaxSize", 5);
 			    	Config.set("HomeWorld.isjoinhw", 0);
 			    	fileSave(Config, file);
 			    	try {
@@ -186,26 +188,80 @@ public class ConfigUtil {
 		    player.teleport(new Location(Bukkit.getWorld(playerWorld), playerX, playerY, playerZ, yaw, pitch));
 		  }
 		  
-		  public static void setplayerHome(Player player){
+		  public static void setplayerHome(Player player, String name){
 			  YamlConfiguration Config = PlayerdataAPI.createYaml(player.getUniqueId());
-			    Config.set("Home.world", player.getLocation().getWorld().getName());
-			    Config.set("Home.x", Double.valueOf(player.getLocation().getX()));
-			    Config.set("Home.y", Double.valueOf(player.getLocation().getY()));
-			    Config.set("Home.z", Double.valueOf(player.getLocation().getZ()));
-			    Config.set("Home.pitch", Float.valueOf(player.getLocation().getPitch()));
-			    Config.set("Home.yaw", Float.valueOf(player.getLocation().getYaw()));
+			    Config.set("Home." + String.valueOf(name) + ".world", player.getLocation().getWorld().getName());
+			    Config.set("Home." + String.valueOf(name) + ".x", Double.valueOf(player.getLocation().getX()));
+			    Config.set("Home." + String.valueOf(name) + ".y", Double.valueOf(player.getLocation().getY()));
+			    Config.set("Home." + String.valueOf(name) + ".z", Double.valueOf(player.getLocation().getZ()));
+			    Config.set("Home." + String.valueOf(name) + ".pitch", Float.valueOf(player.getLocation().getPitch()));
+			    Config.set("Home." + String.valueOf(name) + ".yaw", Float.valueOf(player.getLocation().getYaw()));
 			    PlayerdataAPI.saveYaml(player.getUniqueId(), Config);
 			  }
 		  
-		  public static void getplayerHome(Player player) {
+		  public static void getplayerHome(Player player, String name) {
 			  YamlConfiguration Config = PlayerdataAPI.createYaml(player.getUniqueId());
-		    double playerX = Config.getDouble("Home.x");
-		    double playerY = Config.getDouble("Home.y");
-		    double playerZ = Config.getDouble("Home.z");
-		    float pitch = Config.getInt("Home.pitch");
-		    float  yaw = Config.getInt("Home.yaw");		      
-		    String playerWorld = Config.getString("Home.world");
-		    player.teleport(new Location(Bukkit.getWorld(playerWorld), playerX, playerY, playerZ, yaw, pitch));
+			  	double playerX = Config.getDouble("Home." + String.valueOf(name) + ".x");
+			  	double playerY = Config.getDouble("Home." + String.valueOf(name) + ".y");
+			  	double playerZ = Config.getDouble("Home." + String.valueOf(name) + ".z");
+			  	float pitch = Config.getInt("Home." + String.valueOf(name) + ".pitch");
+			  	float  yaw = Config.getInt("Home." + String.valueOf(name) + ".yaw");		      
+			  	String playerWorld = Config.getString("Home." + String.valueOf(name) + ".world");
+			  player.teleport(new Location(Bukkit.getWorld(playerWorld), playerX, playerY, playerZ, yaw, pitch));
+		  }
+		  
+		  public static int getplayerHomesize(Player player) {
+			  YamlConfiguration Config = PlayerdataAPI.createYaml(player.getUniqueId()); 
+			  	int size = Config.getInt("player.playerdata.HomeSize");
+			  	return size;
+		  }
+		  
+		  public static int getplayerHomeMaxsize(Player player) {
+			  YamlConfiguration Config = PlayerdataAPI.createYaml(player.getUniqueId()); 
+			  	int size = Config.getInt("player.playerdata.HomeMaxSize");
+			  	return size;
+		  }
+		  
+		  public static void setplayerHomesize(Player player, Double size){
+			  YamlConfiguration Config = PlayerdataAPI.createYaml(player.getUniqueId());
+			  Double money = Config.getDouble("player.playerdata.HomeSize");				    
+				   money += size;   
+		      Config.set("player.playerdata.HomeSize", money);
+			  PlayerdataAPI.saveYaml(player.getUniqueId(), Config);
+			  }
+		  
+		  public static void setplayerHomeMaxsize(Player player, Double size){
+			  YamlConfiguration Config = PlayerdataAPI.createYaml(player.getUniqueId());		    
+			  Double money = Config.getDouble("player.playerdata.HomeMaxSize");				    
+				   money += size;   
+		      Config.set("player.playerdata.HomeMaxSize", money);
+			  PlayerdataAPI.saveYaml(player.getUniqueId(), Config);
+		  }
+		  
+		  public static void removeHomesize(Player player, Double amount) {
+			  YamlConfiguration Config = PlayerdataAPI.createYaml(player.getUniqueId());  
+				Double money = Config.getDouble("player.playerdata.HomeSize");
+		  
+				money -= amount; 
+				if (getplayerHomesize(player) - amount > 0) {
+				Config.set("player.playerdata.HomeSize", money);
+				}else{	
+					return;	
+				}
+				PlayerdataAPI.saveYaml(player.getUniqueId(), Config);
+		  }
+		  
+		  public static void removeHomeMaxsize(Player player, Double amount) {
+			  YamlConfiguration Config = PlayerdataAPI.createYaml(player.getUniqueId());  
+				Double money = Config.getDouble("player.playerdata.HomeMaxSize");
+		  
+				money -= amount; 
+				if (getplayerHomesize(player) - amount > 0) {
+				Config.set("player.playerdata.HomeMaxSize", money);
+				}else{	
+					return;	
+				}
+				PlayerdataAPI.saveYaml(player.getUniqueId(), Config);
 		  }
 
 

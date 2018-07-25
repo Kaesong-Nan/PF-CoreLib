@@ -7,7 +7,6 @@ import cn.mgazul.pfcorelib.player.PlayerdataAPI;
 public class Main extends JavaPlugin {
 	
 	public static Main plugin;   
-	public VaultHandler vaultHandler;
 
   public void onEnable() {
 	  
@@ -19,8 +18,6 @@ public class Main extends JavaPlugin {
     reloadConfig();
     PlayerdataAPI.setFolderPath(getDataFolder(),"/Players");
     Bukkit.getMessenger().registerOutgoingPluginChannel(this, "BungeeCord");
-	(this.vaultHandler = new VaultHandler(this)).hook();
-    Bukkit.getConsoleSender().sendMessage(Msg.prefix + " §a铜钱系统已关联Vault.");
     if(Bukkit.getPluginManager().isPluginEnabled("PlaceholderAPI")) {
     	PFPapiHook.hook();
     	Bukkit.getConsoleSender().sendMessage(Msg.prefix + " §a变量系统已关联PlaceholderAPI.");

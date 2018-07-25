@@ -22,7 +22,7 @@ public class PFPapiHook extends PlaceholderHook{
             return String.valueOf(Formater.formatValue1(coins));
         }
         if (i.equalsIgnoreCase("money")) {
-        	Double money = MoneyAPI.getMoneys(p.getName());
+        	Double money = MoneyAPI.getMoneys(p.getUniqueId());
             return String.valueOf(Formater.formatValue1(money));
         }
         if (i.equalsIgnoreCase("exp")) {

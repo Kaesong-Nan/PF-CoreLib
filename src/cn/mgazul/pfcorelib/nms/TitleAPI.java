@@ -2,12 +2,12 @@ package cn.mgazul.pfcorelib.nms;
 
 import org.bukkit.entity.Player;
 
-import net.minecraft.server.v1_13_R1.ChatMessageType;
-import net.minecraft.server.v1_13_R1.IChatBaseComponent;
-import net.minecraft.server.v1_13_R1.PacketPlayOutChat;
-import net.minecraft.server.v1_13_R1.PacketPlayOutTitle;
-import net.minecraft.server.v1_13_R1.PlayerConnection;
-import org.bukkit.craftbukkit.v1_13_R1.entity.CraftPlayer;
+import net.minecraft.server.v1_13_R2.ChatMessageType;
+import net.minecraft.server.v1_13_R2.IChatBaseComponent;
+import net.minecraft.server.v1_13_R2.PacketPlayOutChat;
+import net.minecraft.server.v1_13_R2.PacketPlayOutTitle;
+import net.minecraft.server.v1_13_R2.PlayerConnection;
+import org.bukkit.craftbukkit.v1_13_R2.entity.CraftPlayer;
 
 public class TitleAPI {
   //屏幕下方

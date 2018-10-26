@@ -1,0 +1,6 @@
+name: PF-CoreLib
+version: @version@
+main: cn.mgazul.pfcorelib.Main
+author: Mgazul
+api-version: 1.13
+softdepend: [Vault,PlaceholderAPI]

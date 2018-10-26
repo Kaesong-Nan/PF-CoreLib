@@ -2,5 +2,6 @@ name: PF-CoreLib
 main: cn.mgazul.pfcorelib.Main
 version: 0.8
 author: Mgazul
+api-version: 1.13
 depend: [Vault]
 

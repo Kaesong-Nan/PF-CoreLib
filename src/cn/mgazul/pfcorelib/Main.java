@@ -3,7 +3,8 @@ package cn.mgazul.pfcorelib;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.ServicePriority;
 import org.bukkit.plugin.java.JavaPlugin;
-import cn.mgazul.pfcorelib.player.PlayerdataAPI;
+
+import cn.mgazul.pfcorelib.configuration.PlayerdataAPI;
 import net.milkbowl.vault.economy.Economy;
 
 public class Main extends JavaPlugin {

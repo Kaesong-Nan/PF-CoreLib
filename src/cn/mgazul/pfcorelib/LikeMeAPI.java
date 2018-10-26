@@ -7,11 +7,11 @@ import org.bukkit.Bukkit;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
 
-import cn.mgazul.pfcorelib.player.PlayerdataAPI;
+import cn.mgazul.pfcorelib.configuration.PlayerdataAPI;
 
 public class LikeMeAPI {
 
-	public static void setLikeMe(UUID uuid, UUID uuid1) {
+	public void setLikeMe(UUID uuid, UUID uuid1) {
 		 YamlConfiguration Config = PlayerdataAPI.createYaml(uuid); 
 		 YamlConfiguration Config1 = PlayerdataAPI.createYaml(uuid1); 	
 		 Player p =Bukkit.getPlayer(uuid);
@@ -38,7 +38,7 @@ public class LikeMeAPI {
 		 PlayerdataAPI.saveYaml(uuid1, Config1);
 	}
 	
-	public static void setmdr(UUID uuid) {
+	public void setmdr(UUID uuid) {
 		 YamlConfiguration Config = PlayerdataAPI.createYaml(uuid); 
 		 Player p =Bukkit.getPlayer(uuid);
 		 if(Config.getString("player.LikeMe.message") != null) {

@@ -14,6 +14,8 @@ import net.milkbowl.vault.economy.EconomyResponse;
 
 public class VaultHandler implements Economy{
 
+	public MoneyAPI moneyAPI;
+
 	@Override
 	public EconomyResponse bankBalance(String arg0) {
 		// TODO 自动生成的方法存根
@@ -100,7 +102,7 @@ public class VaultHandler implements Economy{
 	      if (p == null) {
 	        return new EconomyResponse(0.0D, 0.0D, EconomyResponse.ResponseType.FAILURE, "§c账户不存在");
 	      }
-	      MoneyAPI.setMoneys(p.getUniqueId(), getBalance(arg0)+arg1);
+			MoneyAPI.setMoneys(p.getUniqueId(), getBalance(arg0)+arg1);
 	      return new EconomyResponse(0.0D, getBalance(arg0), EconomyResponse.ResponseType.SUCCESS, "");
 	    }
 	    return new EconomyResponse(0.0D, 0.0D, EconomyResponse.ResponseType.FAILURE, "§c剩余铜钱为负值");
@@ -279,7 +281,7 @@ public class VaultHandler implements Economy{
 	    if (arg1 < 0.0D) {
 	      return new EconomyResponse(0.0D, 0.0D, EconomyResponse.ResponseType.FAILURE, "§c剩余铜钱为负值");
 	    }
-	    MoneyAPI.setMoneys(Bukkit.getPlayer(arg0).getUniqueId(), getBalance(arg0)-arg1);
+		MoneyAPI.setMoneys(Bukkit.getPlayer(arg0).getUniqueId(), getBalance(arg0)-arg1);
 	    return new EconomyResponse(0.0D, getBalance(arg0), EconomyResponse.ResponseType.SUCCESS, "");
 	  }
 

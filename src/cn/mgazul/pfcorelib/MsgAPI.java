@@ -1,6 +1,7 @@
 package cn.mgazul.pfcorelib;
 
 import org.bukkit.Bukkit;
+import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 public class MsgAPI {
@@ -45,6 +46,11 @@ public class MsgAPI {
 	  //发送给玩家
 	  public static void sendMsgToPlayer(Player p, String msg){
 	    p.sendMessage(msg.replace("&", "§"));
+	  }
+	  
+	  //发送CommandSender
+	  public static void sendMsgToPlayer(CommandSender sender, String msg){
+	    sender.sendMessage(msg.replace("&", "§"));
 	  }
 	  
 	  //普通彩色文本信息

@@ -4,7 +4,7 @@ import org.bukkit.Bukkit;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
 
-import cn.mgazul.pfcorelib.player.PlayerdataAPI;
+import cn.mgazul.pfcorelib.configuration.PlayerdataAPI;
 
 public class JobAPI {
 	

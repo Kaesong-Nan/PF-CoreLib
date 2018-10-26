@@ -1,4 +1,4 @@
-package cn.mgazul.pfcorelib.player;
+package cn.mgazul.pfcorelib.configuration;
 
 import java.io.File;
 import java.io.IOException;

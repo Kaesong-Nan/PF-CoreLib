@@ -1,4 +1,4 @@
-package cn.mgazul.pfcorelib;
+package cn.mgazul.pfcorelib.util;
 
 import java.util.Random;
 

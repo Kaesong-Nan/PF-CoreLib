@@ -4,7 +4,7 @@ import java.util.UUID;
 
 import org.bukkit.configuration.file.YamlConfiguration;
 
-import cn.mgazul.pfcorelib.player.PlayerdataAPI;
+import cn.mgazul.pfcorelib.configuration.PlayerdataAPI;
 
 public class BankAPI {
 

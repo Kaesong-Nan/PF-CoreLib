@@ -11,6 +11,8 @@ import me.clip.placeholderapi.PlaceholderHook;
 public class PFPapiHook extends PlaceholderHook{
 
 	private static final String hook_name = "pf";
+    public MoneyAPI moneyAPI;
+    public FCoinsAPI fCoinsAPI;
 
 	@Override
 	public String onPlaceholderRequest(Player p, String i) {
@@ -46,7 +48,7 @@ public class PFPapiHook extends PlaceholderHook{
             return Formater.formatValue2(getMaxhealth);
         }
         if (i.equalsIgnoreCase("pflevels")) {
-            return Formater.formatValue2(PFLevelsAPI.getPFLevels(p.getName()));
+            return String.valueOf(p.getLevel());
         }
 
 		return null;

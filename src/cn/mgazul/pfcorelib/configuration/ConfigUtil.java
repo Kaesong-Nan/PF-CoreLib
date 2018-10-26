@@ -1,4 +1,4 @@
-package cn.mgazul.pfcorelib;
+package cn.mgazul.pfcorelib.configuration;
 
 import java.io.File;
 import java.io.IOException;
@@ -8,14 +8,15 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.Set;
 
+import cn.mgazul.pfcorelib.Main;
+import cn.mgazul.pfcorelib.Msg;
+import cn.mgazul.pfcorelib.MsgAPI;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.World;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
-
-import cn.mgazul.pfcorelib.player.PlayerdataAPI;
 
 public class ConfigUtil {
 	
@@ -30,7 +31,7 @@ public class ConfigUtil {
 	  }
 	  
 	  public static void spawn(Player player){
-		    File file = new File("plugins/"+Msg.PluginName, "config.yml");
+		    File file = new File("plugins/"+ Msg.PluginName, "config.yml");
 		    if (file.exists()){
 		      String world = null;
 		      double x = 0.0D;
@@ -329,6 +330,9 @@ public class ConfigUtil {
 			
 			public static Set<String> listWarps(){
 				Set<String> warps = Main.plugin.getConfig().getConfigurationSection("warps").getKeys(false);
+				if(warps == null) {
+					return null;
+				}
 				return warps;
 			  }			
 			

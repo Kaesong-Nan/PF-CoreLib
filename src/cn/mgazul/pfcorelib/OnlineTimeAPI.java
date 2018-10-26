@@ -7,6 +7,7 @@ import java.util.Date;
 import java.util.TimeZone;
 import java.util.UUID;
 
+import cn.mgazul.pfcorelib.configuration.ConfigUtil;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 
@@ -45,7 +46,7 @@ public class OnlineTimeAPI {
 	    
 		  money += amount;   
 		  cfg.set("player.playerdata.OnlineTime", money);
-		  ConfigUtil.fileSave(cfg,file);
+		  cn.mgazul.pfcorelib.configuration.ConfigUtil.fileSave(cfg,file);
 	  }
 	  
 	  public static void setOTime(UUID uuid, double amount) {

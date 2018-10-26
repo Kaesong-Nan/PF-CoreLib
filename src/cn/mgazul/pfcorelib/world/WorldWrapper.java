@@ -11,7 +11,7 @@ import org.bukkit.WorldCreator;
 import org.bukkit.WorldType;
 import org.bukkit.entity.Player;
 
-import cn.mgazul.pfcorelib.ConfigUtil;
+import cn.mgazul.pfcorelib.configuration.ConfigUtil;
 import cn.mgazul.pfcorelib.MsgAPI;
 
 public class WorldWrapper {

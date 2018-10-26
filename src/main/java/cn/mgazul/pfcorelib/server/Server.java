@@ -1,10 +1,5 @@
 package cn.mgazul.pfcorelib.server;
 
-import java.util.Collection;
-import java.util.List;
-import java.util.UUID;
-
-import org.apache.logging.log4j.message.Message;
 import org.bukkit.Bukkit;
 import org.bukkit.OfflinePlayer;
 import org.bukkit.World;
@@ -12,10 +7,14 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.PluginManager;
 
+import java.util.Collection;
+import java.util.List;
+import java.util.UUID;
+
 public class Server {
 
     public static Collection<? extends Player> getOnlinePlayers() {
-        return (Collection<? extends Player>)Bukkit.getOnlinePlayers();
+        return Bukkit.getOnlinePlayers();
     }
     
     public static OfflinePlayer[] getOfflinePlayers() {
@@ -24,10 +23,6 @@ public class Server {
     
     public static void broadcast(final String str) {
         getOnlinePlayers().forEach(player -> player.sendMessage(str));
-    }
-    
-    public static void broadcast(final Message message) {
-        broadcast((message).toString());
     }
     
     public static World getWorld(final String name) {

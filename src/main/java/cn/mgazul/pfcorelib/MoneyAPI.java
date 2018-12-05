@@ -1,9 +1,9 @@
 package cn.mgazul.pfcorelib;
 
-import java.util.UUID;
+import cn.mgazul.pfcorelib.configuration.PlayerdataAPI;
 import org.bukkit.configuration.file.YamlConfiguration;
 
-import cn.mgazul.pfcorelib.configuration.PlayerdataAPI;
+import java.util.UUID;
 
 /*
  * 铜钱

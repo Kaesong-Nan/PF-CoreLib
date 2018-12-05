@@ -1,11 +1,10 @@
 package cn.mgazul.pfcorelib;
 
+import cn.mgazul.pfcorelib.configuration.PlayerdataAPI;
 import org.bukkit.Bukkit;
 import org.bukkit.OfflinePlayer;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
-
-import cn.mgazul.pfcorelib.configuration.PlayerdataAPI;
 
 public class PFLevelsAPI {
 

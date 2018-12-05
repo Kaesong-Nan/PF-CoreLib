@@ -1,15 +1,15 @@
 package cn.mgazul.pfcorelib;
 
+import cn.mgazul.pfcorelib.configuration.ConfigUtil;
+import org.bukkit.configuration.file.FileConfiguration;
+import org.bukkit.configuration.file.YamlConfiguration;
+
 import java.io.File;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.TimeZone;
 import java.util.UUID;
-
-import cn.mgazul.pfcorelib.configuration.ConfigUtil;
-import org.bukkit.configuration.file.FileConfiguration;
-import org.bukkit.configuration.file.YamlConfiguration;
 
 public class OnlineTimeAPI {
 	/*

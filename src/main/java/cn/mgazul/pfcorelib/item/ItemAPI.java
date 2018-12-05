@@ -1,10 +1,9 @@
 package cn.mgazul.pfcorelib.item;
 
+import cn.mgazul.pfcorelib.Msg;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
-
-import cn.mgazul.pfcorelib.Msg;
 
 public class ItemAPI {
 

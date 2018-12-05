@@ -1,24 +1,15 @@
 package cn.mgazul.pfcorelib.nms;
 
-import java.util.UUID;
-
+import com.mojang.authlib.GameProfile;
+import net.minecraft.server.v1_13_R2.*;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.craftbukkit.v1_13_R2.CraftServer;
 import org.bukkit.craftbukkit.v1_13_R2.CraftWorld;
 import org.bukkit.craftbukkit.v1_13_R2.entity.CraftPlayer;
 import org.bukkit.entity.Player;
-import com.mojang.authlib.GameProfile;
-import net.minecraft.server.v1_13_R2.EntityHuman;
-import net.minecraft.server.v1_13_R2.EntityPlayer;
-import net.minecraft.server.v1_13_R2.MinecraftServer;
-import net.minecraft.server.v1_13_R2.Packet;
-import net.minecraft.server.v1_13_R2.PacketPlayOutNamedEntitySpawn;
-import net.minecraft.server.v1_13_R2.PacketPlayOutPlayerInfo;
-import net.minecraft.server.v1_13_R2.PlayerConnection;
-import net.minecraft.server.v1_13_R2.PlayerInteractManager;
-import net.minecraft.server.v1_13_R2.World;
-import net.minecraft.server.v1_13_R2.WorldServer;
+
+import java.util.UUID;
 
 public class NPC {
 

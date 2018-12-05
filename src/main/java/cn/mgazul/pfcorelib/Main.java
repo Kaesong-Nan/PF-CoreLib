@@ -1,16 +1,15 @@
 package cn.mgazul.pfcorelib;
 
+import cn.mgazul.pfcorelib.configuration.PlayerdataAPI;
+import net.milkbowl.vault.economy.Economy;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.ServicePriority;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import cn.mgazul.pfcorelib.configuration.PlayerdataAPI;
-import net.milkbowl.vault.economy.Economy;
-
 public class Main extends JavaPlugin {
 	
 	public static Main plugin;  
-	private Economy vault;
+	public Economy vault;
 
   public void onEnable() {
 	  

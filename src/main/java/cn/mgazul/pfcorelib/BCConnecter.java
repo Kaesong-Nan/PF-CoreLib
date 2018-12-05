@@ -1,8 +1,9 @@
 package cn.mgazul.pfcorelib;
 
+import org.bukkit.entity.Player;
+
 import java.io.ByteArrayOutputStream;
 import java.io.DataOutputStream;
-import org.bukkit.entity.Player;
 
 public class BCConnecter
 {

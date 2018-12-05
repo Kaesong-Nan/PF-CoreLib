@@ -1,13 +1,5 @@
 package cn.mgazul.pfcorelib.configuration;
 
-import java.io.File;
-import java.io.IOException;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.Set;
-
 import cn.mgazul.pfcorelib.Main;
 import cn.mgazul.pfcorelib.Msg;
 import cn.mgazul.pfcorelib.MsgAPI;
@@ -17,6 +9,14 @@ import org.bukkit.World;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
+
+import java.io.File;
+import java.io.IOException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.Set;
 
 public class ConfigUtil {
 	
@@ -223,46 +223,44 @@ public class ConfigUtil {
 			  	return size;
 		  }
 		  
-		  public static void setplayerHomesize(Player player, Double size){
+		  public static void setplayerHomesize(Player player, int size){
 			  YamlConfiguration Config = PlayerdataAPI.createYaml(player.getUniqueId());
-			  Double money = Config.getDouble("player.playerdata.HomeSize");				    
+			  int money = Config.getInt("player.playerdata.HomeSize");
 				   money += size;   
-		      Config.set("player.playerdata.HomeSize", money);
+		      Config.set("player.playerdata.HomeSize", (int)money);
 			  PlayerdataAPI.saveYaml(player.getUniqueId(), Config);
-			  }
+	  		}
 		  
-		  public static void setplayerHomeMaxsize(Player player, Double size){
+		  public static void setplayerHomeMaxsize(Player player, int size){
 			  YamlConfiguration Config = PlayerdataAPI.createYaml(player.getUniqueId());		    
-			  Double money = Config.getDouble("player.playerdata.HomeMaxSize");				    
+			  int money = Config.getInt("player.playerdata.HomeMaxSize");
 				   money += size;   
-		      Config.set("player.playerdata.HomeMaxSize", money);
+		      Config.set("player.playerdata.HomeMaxSize", (int)money);
 			  PlayerdataAPI.saveYaml(player.getUniqueId(), Config);
 		  }
 		  
-		  public static void removeHomesize(Player player, Double amount) {
+		  public static void removeHomesize(Player player, int amount) {
 			  YamlConfiguration Config = PlayerdataAPI.createYaml(player.getUniqueId());  
-				Double money = Config.getDouble("player.playerdata.HomeSize");
-		  
-				money -= amount; 
-				if (getplayerHomesize(player) - amount > 0) {
-				Config.set("player.playerdata.HomeSize", money);
-				}else{	
-					return;	
-				}
-				PlayerdataAPI.saveYaml(player.getUniqueId(), Config);
+				int money = Config.getInt("player.playerdata.HomeSize");
+					money -= amount;
+					if (getplayerHomesize(player) - amount > 0) {
+						Config.set("player.playerdata.HomeSize", (int)money);
+						PlayerdataAPI.saveYaml(player.getUniqueId(), Config);
+					}else{
+						return;
+					}
 		  }
 		  
-		  public static void removeHomeMaxsize(Player player, Double amount) {
+		  public static void removeHomeMaxsize(Player player, int amount) {
 			  YamlConfiguration Config = PlayerdataAPI.createYaml(player.getUniqueId());  
-				Double money = Config.getDouble("player.playerdata.HomeMaxSize");
-		  
-				money -= amount; 
-				if (getplayerHomesize(player) - amount > 0) {
-				Config.set("player.playerdata.HomeMaxSize", money);
-				}else{	
-					return;	
-				}
-				PlayerdataAPI.saveYaml(player.getUniqueId(), Config);
+				int money = Config.getInt("player.playerdata.HomeMaxSize");
+					money -= amount;
+					if (getplayerHomesize(player) - amount > 0) {
+						Config.set("player.playerdata.HomeMaxSize", money);
+						PlayerdataAPI.saveYaml(player.getUniqueId(), Config);
+					}else{
+						return;
+					}
 		  }
 
 
